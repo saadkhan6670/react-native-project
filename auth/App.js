@@ -1,26 +1,26 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import firebase from 'firebase'
+import {View} from 'react-native';
+import {Header} from './src/components/common'
                             
-export default class App extends Component<Props> {
+export default class App extends Component {
+  componentDidMount(){
+    firebase.initializeApp( {
+      apiKey: "AIzaSyBxrC7wDYReuJ-p1a2YdDa5lZrsHpu6N04",
+      authDomain: "authentication-17.firebaseapp.com",
+      databaseURL: "https://authentication-17.firebaseio.com",
+      projectId: "authentication-17",
+      storageBucket: "authentication-17.appspot.com",
+      messagingSenderId: "722094038539"
+    })
+  }
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+      <View >
+        <Header headerText="Authentication" />
+        <Text> An App! </Text>
+    
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
- 
-});
