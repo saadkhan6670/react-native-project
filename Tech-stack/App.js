@@ -11,7 +11,7 @@ export default class App extends Component {
     return (
       <Provider store={createStore(reducers)}>
       <View >
-        <Header headerText="Tech Stack" />
+        <Header headertext="Tech Stack" />
         <LibraryList/>
       </View>
       </Provider>
